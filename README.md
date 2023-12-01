@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Title
 
-Currently, two official plugins are available:
+This project is a profile listing application that has the following features.
+1. List profile using randomuser.me api
+2. Paginate all data
+3. Filter data with gender
+5. View specific profile, user location on map and flag of user's nationality
+6. A dark mode and light mode for the application
+7. Error handling 
+8. Search users
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Documentation
 
-## Expanding the ESLint configuration
+The frontend dark mode state management is done using Context API. Routing is handled through react-router-dom. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I have implemented search by filtering profiles which contain alphabets of the search text, and then displayed those profiles.
 
-- Configure the top-level `parserOptions` property like this:
+I have implemented pagination and filters as explained in the api documentation. The filters persists even if the user navigates away from the page. 
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Installation
+
+After cloning, run:
+```
+cd client
+npm install
+npm run dev
+    
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file in the server directory.
+```
+Add .env in the directory.
+```
+`VITE_SERVER_URL = 'https://randomuser.me/api/'`
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### The client runs on localhost:5173
